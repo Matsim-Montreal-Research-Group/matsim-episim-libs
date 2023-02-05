@@ -47,5 +47,16 @@ public interface SimulationListener {
 	 */
 	default void onIterationEnd(int iteration, LocalDate date) {
 	}
-
+	/**
+	 * Called after init before the simulation starts.
+	 *
+	 * @param rnd        local random instance of the event handler
+	 * @param persons    all persons in the simulation
+	 * @param facilities all facilities
+	 * @param vehicles   all vehicles
+	 */
+	default void init(SplittableRandom rnd, Map<Id<Person>, EpisimPerson> persons, Map<Id<ActivityFacility>, InfectionEventHandler.EpisimFacility> facilities, Map<Id<Vehicle>, InfectionEventHandler.EpisimVehicle> vehicles, LocalDate startDate) {
+	}
+	
+	
 }

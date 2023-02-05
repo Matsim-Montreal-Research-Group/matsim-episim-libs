@@ -60,7 +60,10 @@ public class RandomInitialInfections implements InitialInfectionHandler {
 
 			infectedByStrain.put(e.getKey(), 0);
 
-			int numInfections = EpisimUtils.findValidEntry(e.getValue(), 1, date);
+			int defInf = 0;
+			if(infectedByStrain.size()==0) defInf = 1;
+			int numInfections = EpisimUtils.findValidEntry(e.getValue(), defInf, date);
+			
 
 			List<EpisimPerson> candidates = persons.values().stream()
 					.filter(p -> district == null || district.equals(p.getAttributes().getAttribute("district")))

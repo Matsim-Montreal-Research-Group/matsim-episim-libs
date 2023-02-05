@@ -5,6 +5,7 @@ import org.matsim.api.core.v01.population.Person;
 import org.matsim.episim.EpisimPerson;
 import org.matsim.episim.model.SimulationListener;
 import org.matsim.episim.model.VaccinationType;
+import org.matsim.facilities.ActivityFacility;
 
 import java.time.LocalDate;
 import java.util.Map;
@@ -69,5 +70,6 @@ public interface VaccinationModel extends SimulationListener {
 
 		return VaccinationType.generic;
 	}
+	
 
 }
